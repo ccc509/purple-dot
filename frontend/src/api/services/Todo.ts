@@ -52,3 +52,14 @@ export const updateTodo = async (id: string, status: string): Promise<void> => {
 
   await fetch(`http://localhost:3001/api/todos/${id}`, requestOptions);
 };
+
+export const clearAll = async (): Promise<void> => {
+  const headers = new Headers();
+
+  const requestOptions = {
+    method: "DELETE",
+    headers,
+  };
+
+  await fetch("http://localhost:3001/api/todos", requestOptions);
+};

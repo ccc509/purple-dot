@@ -47,7 +47,7 @@ app.put("/api/todos/:todoId", (req: Request, res: Response) => {
   ];
 
   todoList = updatedList.sort((a, b) =>
-    dayjs(a.createdAt).isBefore(b.createdAt) ? 1 : -1
+    dayjs(a.createdAt).isAfter(b.createdAt) ? 1 : -1
   );
 
   res.status(201).send();
@@ -64,5 +64,10 @@ app.post("/api/todos", (req: Request, res: Response) => {
     createdAt: dayjs().toDate(),
   });
 
+  res.status(201).send();
+});
+
+app.delete("/api/todos", (req: Request, res: Response) => {
+  todoList = [];
   res.status(201).send();
 });

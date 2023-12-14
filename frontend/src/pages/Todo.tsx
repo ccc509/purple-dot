@@ -13,9 +13,9 @@ export const Todo: React.FC = () => {
 
   return (
     <Box>
-      <TodoInput refetch={() => console.log("xxx")} />
+      <TodoInput refetch={() => refetch()} />
       <Filter />
-      {data && <TodoList todos={data} />}
+      {data && <TodoList todos={data} refetch={() => refetch()} />}
     </Box>
   );
 };

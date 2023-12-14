@@ -1,6 +1,6 @@
-import { ACTIVE, COMPLETED, DELECTED } from "./constants";
+import { ACTIVE, COMPLETED, DELETED } from "./constants";
 
-export type Status = typeof ACTIVE | typeof COMPLETED | typeof DELECTED;
+export type Status = typeof ACTIVE | typeof COMPLETED | typeof DELETED;
 
 export type Todo = {
   id: string;
